@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <item android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/internet"/>
+
+    <item android:id="@+id/Universities"
+        android:title="University"
+        android:icon="@drawable/browser"/>
+
+    <item android:id="@+id/Rental"
+        android:title="Rentals"
+        android:icon="@drawable/pencil"/>
+
+
+
+
+</group>
+        <item android:title="Profile">
+            <menu>
+                <group android:checkableBehavior="single">
+                <item android:id="@+id/profile"
+            android:title="Profile"
+            android:icon="@drawable/users"/>
+
+            <item android:id="@+id/settings"
+            android:title="Settings"
+            android:icon="@drawable/settings"/>
+
+            <item android:id="@+id/logout"
+            android:title="logout"
+            android:icon="@drawable/cancel"/>
+
+                </group>
+            </menu>
+        </item>
+
+
+
+</menu>

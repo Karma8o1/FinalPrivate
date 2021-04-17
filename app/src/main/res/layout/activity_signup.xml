@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup"
+    android:orientation="vertical"
+    android:background="#B32292F6">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:fadingEdge="horizontal|vertical"
+        android:src="@drawable/logos"
+        android:layout_marginStart="50sp"
+        android:layout_marginEnd="50sp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/user"
+            android:layout_width="500sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="50sp"
+            android:autofillHints="false"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_below="@id/logo"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="70sp"
+                android:layout_marginEnd="20sp"
+                android:autofillHints="false"
+                android:backgroundTint="@color/white"
+                android:hint="Username"
+                android:paddingLeft="10sp"
+                android:textColorHint="@color/white"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emails"
+            android:layout_width="500sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user"
+            android:autofillHints="false"
+            android:layout_marginTop="25sp"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_below="@id/user"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginEnd="20sp"
+                android:autofillHints="false"
+                android:backgroundTint="@color/white"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10sp"
+                android:textColorHint="@color/white"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pass"
+            android:layout_width="550sp"
+            android:layout_marginTop="25sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emails"
+            android:autofillHints="false"
+            android:textColorHint="#ffffff"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_below="@id/email"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginEnd="20sp"
+                android:autofillHints="false"
+                android:backgroundTint="@color/white"
+                android:ems="5"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="10sp"
+                android:textColorHint="#ffffff"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dobs"
+            android:layout_width="500sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25sp"
+            android:layout_below="@id/pass"
+            android:autofillHints="false"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/DOB"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_below="@id/pass"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginEnd="20sp"
+                android:autofillHints="false"
+                android:backgroundTint="@color/white"
+                android:hint="Date Of Birth"
+                android:inputType="textNoSuggestions"
+                android:paddingLeft="10sp"
+                android:textColorHint="@color/white"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cities"
+            android:layout_width="500sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dobs"
+            android:layout_marginTop="25sp"
+            android:autofillHints="false"
+            android:textColorHint="@color/white">
+
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_below="@id/dobs"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginEnd="20sp"
+                android:autofillHints="false"
+                android:backgroundTint="@color/white"
+                android:hint="City"
+                android:inputType="text"
+                android:paddingLeft="10sp"
+                android:textColorHint="@color/white"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cities"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50sp"
+        android:backgroundTint="#CC4693D8"
+        android:gravity="center"
+        android:background="@drawable/mybutton"
+        android:text="REGISTER/SIGNUP"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:cornerRadius="50sp" />
+
+</RelativeLayout>

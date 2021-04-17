@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170sp"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:gravity="center"
+    android:paddingTop="10sp">
+<ImageView
+    android:layout_width="100sp"
+    android:layout_height="100sp"
+    android:src="@drawable/pencil_head"
+    />
+</LinearLayout>
