@@ -8,7 +8,8 @@
     android:background="#FFFFFF"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".Pages">
+    tools:context=".Pages"
+    tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
