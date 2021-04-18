@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".signup"
     android:orientation="vertical"
-    android:background="#B32292F6">
+    android:background="#992292F6">
 
     <ImageView
         android:id="@+id/logo"
