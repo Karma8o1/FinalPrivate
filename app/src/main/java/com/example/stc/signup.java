@@ -64,6 +64,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
 
                         HashMap<String, String> userMap = new HashMap<>();
                         userMap.put("Displayname", username);
+                        userMap.put("EmailAddress", email);
                         userMap.put("DOB", dob);
                         userMap.put("city", city);
                         userMap.put("image", "default");

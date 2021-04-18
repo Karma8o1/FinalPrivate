@@ -4,18 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Profile"
-    android:paddingTop="50sp">
+    android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:id="@+id/pr"
+        android:background="#9ED7F3"
+        android:gravity="center">
 <ImageView
     android:layout_width="match_parent"
-    android:layout_height="100sp"
+    android:layout_height="120sp"
     android:src="@drawable/users"
     android:id="@+id/pp"
     />
+    </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/username"
-        android:layout_below="@id/pp"
+        android:layout_below="@id/pr"
         android:layout_marginTop="50sp"
         android:layout_marginStart="30sp"
         android:layout_marginEnd="30sp"
@@ -63,4 +70,13 @@
         android:textColor="@color/black"
         android:text="DESCRIPTION"
         />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/save"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/discard"
+        android:src="@drawable/upload"/>
 </RelativeLayout>
