@@ -36,6 +36,7 @@ public class Pages extends AppCompatActivity implements View.OnClickListener, Na
     private FirebaseAuth firebaseAuth;
     NavigationView navigationView;
     Toolbar toolbar;
+    public String name;
 
 
 
@@ -49,7 +50,7 @@ public class Pages extends AppCompatActivity implements View.OnClickListener, Na
         mUsersDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-            String name =snapshot.child("status").getValue().toString();
+            name =snapshot.child("status").getValue().toString();
             }
 
             @Override
@@ -140,6 +141,12 @@ public class Pages extends AppCompatActivity implements View.OnClickListener, Na
                 transaction3.replace(R.id.container,set);
                 transaction3.commit();
                 toolbar.setTitle("SETTINGS");
+                break;
+            case R.id.admin:
+                adding add = new adding();
+                FragmentTransaction transaction4 = getSupportFragmentManager().beginTransaction();
+                transaction4.replace(R.id.container,add);
+                transaction4.commit();
                 break;
             case R.id.logout:
             logout();

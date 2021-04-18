@@ -3,13 +3,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
-<TextView
+    tools:context=".Profile"
+    android:paddingTop="50sp">
+<ImageView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/title"
-    android:text="USER PROFILE"
-    android:textSize="30sp"
-    android:textColor="@color/black"/>
+    android:layout_height="100sp"
+    android:src="@drawable/users"
+    android:id="@+id/pp"
+    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/username"
+        android:layout_below="@id/pp"
+        android:layout_marginTop="50sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="Username"
+        />
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dob"
+        android:layout_below="@id/username"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:text="DATE OF BIRTH"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/city"
+        android:layout_below="@id/dob"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="Username"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/status"
+        android:layout_below="@id/city"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="DESCRIPTION"
+        />
 </RelativeLayout>
