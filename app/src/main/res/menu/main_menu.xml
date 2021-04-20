@@ -13,7 +13,8 @@
         android:title="Rentals"
         android:icon="@drawable/pencil"/>
 
-<item android:title="ADMIN">
+<item android:title="ADMIN"
+    android:id="@+id/admins">
     <menu>
         <group android:checkableBehavior="single">
         <item android:id="@+id/admin"

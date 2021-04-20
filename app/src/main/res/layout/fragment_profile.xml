@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     tools:context=".Profile"
     android:background="@color/white">
@@ -9,74 +10,236 @@
         android:layout_width="match_parent"
         android:layout_height="200sp"
         android:id="@+id/pr"
-        android:background="#9ED7F3"
-        android:gravity="center">
+        android:background="#88E8F3"
+        android:gravity="center"
+        android:foregroundGravity="center">
+
 <ImageView
-    android:layout_width="match_parent"
+    android:layout_width="120sp"
     android:layout_height="120sp"
-    android:src="@drawable/users"
+    android:src="@drawable/adduser"
+    android:maxHeight="120sp"
+    android:maxWidth="120sp"
+    android:minHeight="120sp"
+    android:minWidth="120sp"
+    app:cornerRadius="500sp"
     android:id="@+id/pp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10sp"
     />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/username"
+            android:layout_below="@id/pp"
+            android:layout_marginTop="10sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:text="Username"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
     </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/pr"
+    android:padding="20sp"
+    android:id="@+id/main">
+
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="120sp"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
-        android:layout_below="@id/pr"
-        android:layout_marginTop="50sp"
-        android:layout_marginStart="30sp"
+        android:id="@+id/m0"
+        android:layout_marginTop="40sp"
+        android:layout_marginStart="5sp"
         android:layout_marginEnd="30sp"
-        android:textSize="20sp"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
+        android:text="Email"
         android:textColor="@color/black"
-        android:text="Username"
         />
 
-
     <TextView
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/dob"
-        android:layout_below="@id/username"
-        android:layout_marginTop="20sp"
-        android:layout_marginStart="30sp"
+        android:layout_marginStart="-15sp"
+        android:layout_marginTop="40sp"
+        android:layout_toRightOf="@id/m1"
+        android:text="Email Address"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"/>
+
+
+
+    <TextView
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:id="@+id/m1"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="5sp"
         android:layout_marginEnd="30sp"
-        android:textSize="20sp"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
+        android:text="Birthday"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:layout_marginStart="-15sp"
+        android:layout_marginTop="30sp"
+        android:layout_toRightOf="@id/m1"
         android:text="DATE OF BIRTH"
         android:textColor="@color/black"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
         />
 
+    <TextView
+        android:id="@+id/m2"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dob"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="30sp"
+        android:layout_marginEnd="30sp"
+        android:text="City"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/city"
+        android:layout_toRightOf="@id/m2"
         android:layout_below="@id/dob"
-        android:layout_marginTop="20sp"
-        android:layout_marginStart="30sp"
-        android:layout_marginEnd="30sp"
-        android:textSize="20sp"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="-15sp"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
         android:textColor="@color/black"
-        android:text="Username"
+        android:text="City"
         />
 
     <TextView
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/city"
+        android:id="@+id/m3"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="5sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
+        android:text="Privilages"
+        android:textColor="@color/black"
+        />
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/m3"
         android:id="@+id/status"
         android:layout_below="@id/city"
-        android:layout_marginTop="20sp"
-        android:layout_marginStart="30sp"
-        android:layout_marginEnd="30sp"
-        android:textSize="20sp"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="-15sp"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
         android:textColor="@color/black"
         android:text="DESCRIPTION"
+        />
+    <TextView
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/m3"
+        android:id="@+id/m4"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="5sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
+        android:text="Applied Inst."
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/m4"
+        android:id="@+id/applied"
+        android:layout_below="@id/status"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="-15sp"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
+        android:textColor="@color/black"
+        android:text="No. of Institutes"
+        />
+    <TextView
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/m4"
+        android:id="@+id/m5"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="5sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
+        android:text="Applied Inst."
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/m4"
+        android:id="@+id/rent"
+        android:layout_below="@id/applied"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="-15sp"
+        android:textSize="18sp"
+        android:fontFamily="@font/basic"
+        style="bold"
+        android:textColor="@color/black"
+        android:text="No. of Rentals"
         />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/save"/>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:src="@drawable/upload"
+        android:layout_below="@id/rent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50sp"
+        android:id="@+id/upload"
+        />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/discard"
-        android:src="@drawable/upload"/>
+        android:text="UPLOAD/UPDATE"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_below="@id/upload"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="10sp"/>
+</RelativeLayout>
+
 </RelativeLayout>

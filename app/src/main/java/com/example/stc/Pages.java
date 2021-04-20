@@ -2,6 +2,7 @@ package com.example.stc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,9 +35,9 @@ public class Pages extends AppCompatActivity implements View.OnClickListener, Na
     private String mCurrent_state;
     private DrawerLayout drawerLayout;
     private FirebaseAuth firebaseAuth;
+    String status,email;
     NavigationView navigationView;
     Toolbar toolbar;
-    public String name;
 
 
 
@@ -47,18 +48,6 @@ public class Pages extends AppCompatActivity implements View.OnClickListener, Na
         firebaseAuth = FirebaseAuth.getInstance();
         mCurrent_state = FirebaseAuth.getInstance().getCurrentUser().getUid();
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(mCurrent_state);
-        mUsersDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-            name =snapshot.child("status").getValue().toString();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
         Profile profile = new Profile();
         FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
         transaction2.replace(R.id.container,profile);
@@ -68,11 +57,30 @@ public class Pages extends AppCompatActivity implements View.OnClickListener, Na
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.admins).setVisible(false);
+        mUsersDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                status = snapshot.child("status").getValue().toString();
+                if ((snapshot.child("status").getValue().toString()).equals("admin"))
+                {
+                    menu.findItem(R.id.admins).setVisible(true);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setCheckedItem(R.id.profile);
+
         navigationView.setNavigationItemSelectedListener(this);
 
     }

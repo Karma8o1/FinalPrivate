@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".adding">
-
-    <!-- TODO: Update blank fragment layout -->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/sc"
+    android:scrollbarSize="0sp">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:hint="Institute Name"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:background="@drawable/textfield"
+        android:backgroundTint="#EAE7E7"/>
+</ScrollView>
 
-</FrameLayout>
+</RelativeLayout>

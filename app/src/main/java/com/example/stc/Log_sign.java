@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Log_sign extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth firebaseAuth;
@@ -24,6 +26,7 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
     private Button signup;
     private Button login;
     private TextView forget;
+    public CheckBox remember;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,8 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
         login.setOnClickListener(this);
         forget = (TextView)findViewById(R.id.forget);
         forget.setOnClickListener(this);
+        remember = (CheckBox)findViewById(R.id.remember);
+        remember.setSelected(false);
         progressDialog = new ProgressDialog(this);
     }
     public void signup()
@@ -44,6 +49,14 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
     }
     public void login()
     {
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if(user!=null && remember.isSelected()==true){
+            Toast.makeText(this,"WELCOME BACK",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent (Log_sign.this,Pages.class);
+            startActivity(intent);
+            finish();
+        }
+        else{
         EditText email = (EditText)findViewById(R.id.username);
         EditText password = (EditText)findViewById(R.id.password);
         String emails = email.getText().toString().toLowerCase().trim();
@@ -83,6 +96,7 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
                         }
                     }
                 });
+        }
     }
     public void forget(){
         Toast.makeText(this,"Enter Credentials",Toast.LENGTH_SHORT).show();
@@ -105,4 +119,5 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
                 break;
         }
     }
+
 }
