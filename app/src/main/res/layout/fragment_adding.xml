@@ -1,25 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".adding">
-<ScrollView
+<RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:id="@+id/sc"
     android:scrollbarSize="0sp">
-    <TextView
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50sp"
+        android:id="@+id/ins_name"
         android:hint="Institute Name"
         android:textColorHint="@color/black"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="30sp"
         android:layout_marginStart="30sp"
         android:layout_marginEnd="30sp"
         android:textSize="20sp"
-        android:background="@drawable/mybutton"/>
-</ScrollView>
+        android:background="@drawable/textfield"
+        android:backgroundTint="#D2EBF6"
+        android:paddingLeft="10sp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:hint="Degree"
+        android:id="@+id/degree"
+        android:textColorHint="@color/black"
+        android:layout_below="@id/ins_name"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:background="@drawable/textfield"
+        android:backgroundTint="#D2EBF6"
+        android:paddingLeft="10sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:hint="Deadline"
+        android:id="@+id/deadline"
+        android:layout_below="@id/degree"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:background="@drawable/textfield"
+        android:backgroundTint="#D2EBF6"
+        android:paddingLeft="10sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:hint="Testing Date"
+        android:layout_below="@id/deadline"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:background="@drawable/textfield"
+        android:backgroundTint="#D2EBF6"
+        android:paddingLeft="10sp"
+        />
 
 </RelativeLayout>
+
+</ScrollView>

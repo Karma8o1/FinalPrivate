@@ -107,7 +107,7 @@
             android:autofillHints="false"
             android:textColorHint="@color/white">
 
-            <EditText
+            <TextView
                 android:id="@+id/DOB"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
