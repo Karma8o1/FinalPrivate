@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".adding">
 <ScrollView
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:id="@+id/sc"
     android:scrollbarSize="0sp">
@@ -19,8 +19,7 @@
         android:layout_marginStart="30sp"
         android:layout_marginEnd="30sp"
         android:textSize="20sp"
-        android:background="@drawable/textfield"
-        android:backgroundTint="#EAE7E7"/>
+        android:background="@drawable/mybutton"/>
 </ScrollView>
 
 </RelativeLayout>
