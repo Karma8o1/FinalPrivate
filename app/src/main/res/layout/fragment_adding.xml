@@ -22,7 +22,7 @@
         android:textSize="20sp"
         android:background="@drawable/textfield"
         android:backgroundTint="#D2EBF6"
-        android:paddingLeft="10sp"
+        android:paddingLeft="20sp"
         />
     <EditText
         android:layout_width="match_parent"
@@ -37,13 +37,14 @@
         android:textSize="20sp"
         android:background="@drawable/textfield"
         android:backgroundTint="#D2EBF6"
-        android:paddingLeft="10sp"
+        android:paddingLeft="20sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:hint="Deadline"
         android:id="@+id/deadline"
+        android:gravity="center_vertical"
         android:layout_below="@id/degree"
         android:textColorHint="@color/black"
         android:layout_marginTop="30sp"
@@ -52,13 +53,14 @@
         android:textSize="20sp"
         android:background="@drawable/textfield"
         android:backgroundTint="#D2EBF6"
-        android:paddingLeft="10sp"
+        android:paddingLeft="20sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:hint="Testing Date"
         android:layout_below="@id/deadline"
+        android:gravity="center_vertical"
         android:textColorHint="@color/black"
         android:layout_marginTop="30sp"
         android:layout_marginStart="30sp"
@@ -66,7 +68,7 @@
         android:textSize="20sp"
         android:background="@drawable/textfield"
         android:backgroundTint="#D2EBF6"
-        android:paddingLeft="10sp"
+        android:paddingLeft="20sp"
         />
 
 </RelativeLayout>

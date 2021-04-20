@@ -3,6 +3,7 @@ package com.example.stc;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -43,6 +44,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener, D
         progressDialog = new ProgressDialog(this);
         register = (Button)findViewById(R.id.register);
         DOB = (TextView) findViewById(R.id.DOB);
+        DOB.setPaintFlags(DOB.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
         DOB.setOnClickListener(this);
         register.setOnClickListener(this);
     }

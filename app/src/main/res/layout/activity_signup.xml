@@ -98,37 +98,32 @@
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dobs"
-            android:layout_width="500sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25sp"
-            android:layout_below="@id/pass"
-            android:autofillHints="false"
-            android:textColorHint="@color/white">
 
             <TextView
                 android:id="@+id/DOB"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:layout_below="@id/pass"
+                android:layout_below="@id/cities"
                 android:layout_marginStart="20sp"
+                android:background="@drawable/textfield"
                 android:layout_marginTop="5sp"
                 android:layout_marginEnd="20sp"
                 android:autofillHints="false"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="#00FFFFFF"
                 android:hint="Date Of Birth"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10sp"
                 android:textColorHint="@color/white"
-                android:textStyle="bold" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center"
+                />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/cities"
             android:layout_width="500sp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/dobs"
+            android:layout_below="@id/pass"
             android:layout_marginTop="25sp"
             android:autofillHints="false"
             android:textColorHint="@color/white">
@@ -137,7 +132,7 @@
                 android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:layout_below="@id/dobs"
+                android:layout_below="@id/DOB"
                 android:layout_marginStart="20sp"
                 android:layout_marginTop="20sp"
                 android:layout_marginEnd="20sp"
@@ -154,7 +149,7 @@
         android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/cities"
+        android:layout_below="@id/DOB"
         android:layout_marginStart="50sp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="50sp"
