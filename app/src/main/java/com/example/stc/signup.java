@@ -3,12 +3,9 @@ package com.example.stc;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -19,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,10 +26,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.iid.FirebaseInstanceId;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class signup extends AppCompatActivity implements View.OnClickListener{
+public class signup extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private DatabaseReference mDatabase;
@@ -126,30 +125,22 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
                 String dob = DOB.getText().toString().trim();
                 String City = city.getText().toString().trim();
                 signup(email,pass,user,dob,City);
-
             case R.id.DOB:
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog dialog = new DatePickerDialog(signup.this,android.R.style.Theme_Holo_Light_Dialog, mDateSetListener,year,month,day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-                mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                  month = month+1;
-                  Log.d(TAG,"onDateSet: dd/mm/yyyy"+dayOfMonth+"/"+month+"/"+year);
-                  String date = dayOfMonth+"/"+month+"/"+year;
-                  DOB.setText(date);
-                    }
-                };
-                //DialogFragment datePicker = new DatePickerFragment();
-                //datePicker.show(getSupportFragmentManager(),"Date Picker");
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(),"Date Picker");
             default:
                 return;
         }
     }
 
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH,month);
+        calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+        String cds = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        DOB.setText(cds);
 
+    }
 }
