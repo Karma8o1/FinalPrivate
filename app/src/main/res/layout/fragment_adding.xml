@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".adding">
 <RelativeLayout
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/sc"
     android:scrollbarSize="0sp">
@@ -17,6 +17,8 @@
         android:hint="Institute Name"
         android:textColorHint="@color/black"
         android:layout_marginTop="30sp"
+        android:maxHeight="50sp"
+        android:textColor="@color/black"
         android:layout_marginStart="30sp"
         android:layout_marginEnd="30sp"
         android:textSize="20sp"
@@ -29,39 +31,27 @@
         android:layout_height="50sp"
         android:hint="Degree"
         android:id="@+id/degree"
+        android:maxHeight="50sp"
         android:textColorHint="@color/black"
         android:layout_below="@id/ins_name"
         android:layout_marginTop="30sp"
         android:layout_marginStart="30sp"
         android:layout_marginEnd="30sp"
         android:textSize="20sp"
+        android:textColor="@color/black"
         android:background="@drawable/textfield"
         android:backgroundTint="#D2EBF6"
         android:paddingLeft="20sp"
         />
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="50sp"
-        android:hint="Deadline"
-        android:id="@+id/deadline"
-        android:gravity="center_vertical"
+        android:hint="Batch Year (Summer/Fall/Spring)"
+        android:maxHeight="50sp"
+        android:id="@+id/batch"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:layout_below="@id/degree"
-        android:textColorHint="@color/black"
-        android:layout_marginTop="30sp"
-        android:layout_marginStart="30sp"
-        android:layout_marginEnd="30sp"
-        android:textSize="20sp"
-        android:background="@drawable/textfield"
-        android:backgroundTint="#D2EBF6"
-        android:paddingLeft="20sp"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:hint="Testing Date"
-        android:layout_below="@id/deadline"
-        android:gravity="center_vertical"
-        android:textColorHint="@color/black"
         android:layout_marginTop="30sp"
         android:layout_marginStart="30sp"
         android:layout_marginEnd="30sp"
@@ -71,6 +61,61 @@
         android:paddingLeft="20sp"
         />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:hint="Deadline"
+        android:id="@+id/deadline"
+        android:gravity="center_vertical"
+        android:layout_below="@id/batch"
+        android:textColorHint="@color/black"
+        android:maxHeight="50sp"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:background="@drawable/textfield"
+        android:backgroundTint="#D2EBF6"
+        android:paddingLeft="20sp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:hint="Testing Date"
+        android:id="@+id/test_date"
+        android:textColor="@color/black"
+        android:layout_below="@id/deadline"
+        android:gravity="center_vertical"
+        android:textColorHint="@color/black"
+        android:maxHeight="50sp"
+        android:layout_marginTop="30sp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:textSize="20sp"
+        android:background="@drawable/textfield"
+        android:backgroundTint="#D2EBF6"
+        android:paddingLeft="20sp"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/test_date"
+        android:layout_marginStart="100sp"
+        android:layout_marginTop="100sp"
+        android:src="@drawable/upload" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/test_date"
+        android:layout_toRightOf="@id/upload"
+        android:layout_marginStart="100sp"
+        android:layout_marginTop="100sp"
+        android:src="@drawable/cancel"
+        android:layout_marginBottom="100sp"/>
 </RelativeLayout>
 
 </ScrollView>

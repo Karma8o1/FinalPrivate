@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Log_sign"
     android:orientation="vertical"
-    android:background="#992292F6">
+    android:background="#66b3ff">
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
@@ -79,6 +79,7 @@
         android:layout_below="@id/pass"
         android:text="Remember Me"
         android:layout_marginStart="20sp"
+        android:layout_marginTop="15sp"
         android:textColor="@color/white"
         android:shadowColor="@color/white"/>
     <TextView

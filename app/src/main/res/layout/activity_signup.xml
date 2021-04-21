@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".signup"
     android:orientation="vertical"
-    android:background="#992292F6">
+    android:background="#66b3ff">
 
     <ImageView
         android:id="@+id/logo"
@@ -18,13 +18,18 @@
         android:src="@drawable/logos"
         android:layout_marginStart="50sp"
         android:layout_marginEnd="50sp"/>
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="200sp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/user"
             android:layout_width="500sp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/logo"
-            android:layout_marginTop="50sp"
+            android:layout_marginTop="0sp"
             android:autofillHints="false"
             android:textColorHint="@color/white">
 
@@ -109,14 +114,14 @@
                 android:layout_marginTop="5sp"
                 android:layout_marginEnd="20sp"
                 android:autofillHints="false"
-                android:backgroundTint="#00FFFFFF"
+                android:backgroundTint="#66b3ff"
                 android:hint="Date Of Birth"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="10sp"
                 android:textColorHint="@color/white"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -151,7 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/DOB"
         android:layout_marginStart="50sp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="50sp"
         android:backgroundTint="#CC4693D8"
         android:gravity="center"
@@ -159,6 +164,8 @@
         android:text="REGISTER/SIGNUP"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:cornerRadius="50sp" />
-
+        app:cornerRadius="50sp"
+        android:layout_marginBottom="20sp"/>
+    </RelativeLayout>
+</ScrollView>
 </RelativeLayout>
