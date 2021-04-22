@@ -76,6 +76,7 @@ public class adding extends Fragment implements View.OnClickListener {
             userMap.put("batch", batch.getText().toString().trim());
             userMap.put("deadline", deadline.getText().toString().trim());
             userMap.put("test", test.getText().toString().trim());
+            userMap.put("logo", "default");
             userMap.put("available", "yes");
             databaseReference.child("Universities").child(id).setValue(userMap);
             id = String.valueOf(value);
