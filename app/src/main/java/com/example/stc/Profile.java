@@ -44,6 +44,7 @@ private StorageReference storageReference;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_profile, container, false);
+        storageReference = FirebaseStorage.getInstance().getReference();
         u_n = view.findViewById(R.id.username);
         dob = view.findViewById(R.id.dob);
         city = view.findViewById(R.id.city);

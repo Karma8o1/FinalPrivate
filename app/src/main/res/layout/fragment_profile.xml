@@ -15,7 +15,7 @@
         android:gravity="center"
         android:foregroundGravity="center">
 
-<ImageView
+<de.hdodenhof.circleimageview.CircleImageView
     android:layout_width="120sp"
     android:layout_height="120sp"
     android:src="@drawable/adduser"
@@ -28,6 +28,8 @@
     android:id="@+id/pp"
     android:layout_centerHorizontal="true"
     android:layout_marginTop="10sp"
+    app:civ_border_color="@color/design_default_color_primary"
+    app:civ_border_width="2sp"
     />
 
         <TextView
