@@ -230,15 +230,16 @@
         android:textColor="@color/black"
         android:text="No. of Rentals"
         />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/upload"
         android:layout_below="@id/rent"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50sp"
-        android:id="@+id/upload"
-        />
+        android:src="@drawable/upload"
+        app:backgroundTint="#02A857" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

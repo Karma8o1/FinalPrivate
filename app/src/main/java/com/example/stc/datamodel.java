@@ -1,36 +1,56 @@
 package com.example.stc;
 
 public class datamodel {
-    int image;
-    String header,desc;
+    String ins_name,degree,deadline,test,logo;
+    datamodel(){
 
-    public int getImage() {
-        return image;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public datamodel(String ins_name, String degree, String deadline, String test, String logo) {
+        this.ins_name = ins_name;
+        this.degree = degree;
+        this.deadline = deadline;
+        this.test = test;
+        this.logo = logo;
+    }
+    public String getIns_name() {
+        return ins_name;
     }
 
-    public String getHeader() {
-        return header;
+    public void setIns_name(String ins_name) {
+        this.ins_name = ins_name;
     }
 
-    public void setHeader(String header) {
-        this.header = header;
+    public String getDegree() {
+        return degree;
     }
 
-    public String getDesc() {
-        return desc;
+    public void setDegree(String degree) {
+        this.degree = degree;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public String getDeadline() {
+        return deadline;
     }
 
-    public datamodel(int image, String header, String desc) {
-        this.image = image;
-        this.header = header;
-        this.desc = desc;
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
     }
+
+    public String getTest() {
+        return test;
+    }
+
+    public void setTest(String test) {
+        this.test = test;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
 }

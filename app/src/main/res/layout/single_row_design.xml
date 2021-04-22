@@ -17,11 +17,13 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img1"
             android:layout_width="80dp"
+            app:civ_border_color="@color/design_default_color_primary"
+            app:civ_border_width="2sp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="5sp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2sp"
             android:layout_marginTop="0dp"
             android:src="@mipmap/ic_launcher" />
 
@@ -47,7 +49,28 @@
             android:layout_toRightOf="@id/img1"
             android:layout_below="@+id/t1"
             android:text="This is Description Text"
-            android:textSize="20dp" />
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/t3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@+id/t2"
+            android:text="Deadline"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="10sp"/>
+        <TextView
+            android:id="@+id/t4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/t3"
+            android:layout_below="@+id/t2"
+            android:text="Test date"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
 
     </RelativeLayout>
 
