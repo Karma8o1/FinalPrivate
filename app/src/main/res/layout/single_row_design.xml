@@ -49,6 +49,7 @@
             android:layout_toRightOf="@id/img1"
             android:layout_below="@+id/t1"
             android:text="This is Description Text"
+            android:textColor="@color/black"
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/t3"
