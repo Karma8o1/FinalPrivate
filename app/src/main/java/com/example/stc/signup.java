@@ -20,6 +20,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -61,7 +62,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener, D
 
         if (TextUtils.isEmpty(pass))
         {
-            Toast.makeText(getApplicationContext(),"Password Required",Toast.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(android.R.id.content), "Password Required", Snackbar.LENGTH_LONG).show();
             return;
         }
         progressDialog.setMessage("Registering......");
@@ -95,7 +96,8 @@ public class signup extends AppCompatActivity implements View.OnClickListener, D
                                 }
                                 else
                                 {
-                                    Toast.makeText(getApplicationContext(),"Unable to store data",Toast.LENGTH_SHORT).show();
+                                    Snackbar.make(findViewById(android.R.id.content), "Please Check Internet Connection", Snackbar.LENGTH_LONG).show();
+
                                 }
                             }
                         });
@@ -103,7 +105,8 @@ public class signup extends AppCompatActivity implements View.OnClickListener, D
                     }
                     else
                     {
-                        Toast.makeText(getApplicationContext(),"Unable to Register",Toast.LENGTH_SHORT).show();
+                        Snackbar.make(findViewById(android.R.id.content), "Unable to Register User", Snackbar.LENGTH_LONG).show();
+
                     }
                     progressDialog.dismiss();
                 });

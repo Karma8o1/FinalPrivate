@@ -80,7 +80,7 @@ public class adding extends Fragment implements View.OnClickListener {
             databaseReference.child("Universities").child(id).setValue(userMap);
             id = String.valueOf(value);
             databaseReference.child("ins_no").setValue(id);
-            Toast.makeText(getView().getContext(),"List has been updated",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getView().getContext(),"Upload Successful",Toast.LENGTH_SHORT).show();
         }
         else
         {
