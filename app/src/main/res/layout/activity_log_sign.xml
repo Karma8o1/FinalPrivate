@@ -37,6 +37,7 @@
             app:hintTextAppearance="@color/white"
             android:paddingLeft="10sp"
             android:textColorHint="@color/white"
+            android:inputType="textEmailAddress"
             android:textStyle="bold"
             android:autofillHints="false"
             android:backgroundTint="@color/white"
