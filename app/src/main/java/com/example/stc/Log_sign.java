@@ -100,6 +100,7 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
     }
     public void forget(){
         Toast.makeText(this,"Enter Credentials",Toast.LENGTH_SHORT).show();
+
     }
     @Override
     public void onClick(View v) {
