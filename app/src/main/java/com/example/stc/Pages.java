@@ -39,8 +39,6 @@ public class Pages extends AppCompatActivity implements View.OnClickListener, Na
     NavigationView navigationView;
     Toolbar toolbar;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
