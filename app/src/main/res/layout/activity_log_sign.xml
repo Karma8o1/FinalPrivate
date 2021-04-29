@@ -42,8 +42,36 @@
             android:autofillHints="false"
             android:backgroundTint="@color/white"
             />
-    </com.google.android.material.textfield.TextInputLayout>
 
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="500sp"
+        android:layout_marginTop="100sp"
+        android:layout_below="@id/logo"
+        android:id="@+id/f_mail"
+        android:textColorHint="@color/white"
+        android:autofillHints="false"
+        >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:id="@+id/fmail"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="70sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:hint="Enter Email Address"
+        app:hintTextAppearance="@color/white"
+        android:paddingLeft="10sp"
+        android:textColorHint="@color/white"
+        android:inputType="textEmailAddress"
+        android:textStyle="bold"
+        android:autofillHints="false"
+        android:backgroundTint="@color/white"
+        android:visibility="gone"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_height="wrap_content"
         android:layout_width="550sp"
@@ -110,6 +138,24 @@
         android:layout_marginEnd="50sp"
         android:text="LOGIN"
         android:backgroundTint="#519CD8"
+        android:background="@drawable/mybutton"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:cornerRadius="50sp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/f_pass"
+        android:layout_below="@id/f_mail"
+        android:layout_marginTop="100sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginStart="50sp"
+        android:layout_marginEnd="50sp"
+        android:text="FORGET PASSWORD"
+        android:visibility="gone"
+        android:backgroundTint="#ffffff"
         android:background="@drawable/mybutton"
         android:textStyle="bold"
         android:textSize="14sp"

@@ -24,14 +24,21 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private Button signup;
-    private Button login;
+    private Button login,f_password;
     private TextView forget;
-    public CheckBox remember;
+    private CheckBox remember;
+    private EditText email,password,fmail;
+    private com.google.android.material.textfield.TextInputLayout pass,emails,fmails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_sign);
         firebaseAuth = FirebaseAuth.getInstance();
+        email = (EditText)findViewById(R.id.username);
+        password = (EditText)findViewById(R.id.password);
+        pass = (com.google.android.material.textfield.TextInputLayout)findViewById(R.id.pass);
+        emails = (com.google.android.material.textfield.TextInputLayout)findViewById(R.id.user);
+        fmails = (com.google.android.material.textfield.TextInputLayout)findViewById(R.id.f_mail);
         signup = (Button)findViewById(R.id.signin);
         signup.setOnClickListener(this);
         login = (Button)findViewById(R.id.login);
@@ -39,7 +46,10 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
         forget = (TextView)findViewById(R.id.forget);
         forget.setOnClickListener(this);
         remember = (CheckBox)findViewById(R.id.remember);
+        fmail = (EditText)findViewById(R.id.fmail);
+        f_password = (Button)findViewById(R.id.f_pass);
         remember.setSelected(false);
+        f_password.setOnClickListener(this);
         progressDialog = new ProgressDialog(this);
     }
     public void signup()
@@ -57,8 +67,7 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
             finish();
         }
         else{
-        EditText email = (EditText)findViewById(R.id.username);
-        EditText password = (EditText)findViewById(R.id.password);
+
         String emails = email.getText().toString().toLowerCase().trim();
         String pass = password.getText().toString().trim();
         if (TextUtils.isEmpty(emails))
@@ -99,8 +108,17 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
         }
     }
     public void forget(){
-        Toast.makeText(this,"Enter Credentials",Toast.LENGTH_SHORT).show();
-
+        signup.setVisibility(signup.GONE);
+        login.setVisibility(login.GONE);
+        forget.setVisibility(forget.GONE);
+        email.setVisibility(email.GONE);
+        password.setVisibility(password.GONE);
+        pass.setVisibility(pass.GONE);
+        emails.setVisibility(emails.GONE);
+        remember.setVisibility(remember.GONE);
+        fmail.setVisibility(fmail.VISIBLE);
+        fmails.setVisibility(fmails.VISIBLE);
+        f_password.setVisibility(f_password.VISIBLE);
     }
     @Override
     public void onClick(View v) {
@@ -115,10 +133,32 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
             case R.id.forget:
                 forget();
                 break;
+            case R.id.f_pass:
+                Toast.makeText(getApplicationContext(),"Reset Code Sent",Toast.LENGTH_SHORT).show();
+                break;
             default:
                 Toast.makeText(getApplicationContext(),"Something is Wrong",Toast.LENGTH_LONG).show();
                 break;
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        if(fmail.getVisibility()==View.VISIBLE)
+        {
+            signup.setVisibility(signup.VISIBLE);
+            login.setVisibility(login.VISIBLE);
+            forget.setVisibility(forget.VISIBLE);
+            pass.setVisibility(pass.VISIBLE);
+            email.setVisibility(email.VISIBLE);
+            emails.setVisibility(emails.VISIBLE);
+            password.setVisibility(password.VISIBLE);
+            remember.setVisibility(remember.VISIBLE);
+            fmail.setVisibility(fmail.GONE);
+            fmails.setVisibility(fmails.GONE);
+            f_password.setVisibility(f_password.GONE);
+        }
+        else
+        super.onBackPressed();
+    }
 }
