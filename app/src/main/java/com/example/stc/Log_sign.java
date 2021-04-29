@@ -28,6 +28,7 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
     private TextView forget;
     private CheckBox remember;
     private EditText email,password,fmail;
+    private String alpha;
     private com.google.android.material.textfield.TextInputLayout pass,emails,fmails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,13 +73,14 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
         String pass = password.getText().toString().trim();
         if (TextUtils.isEmpty(emails))
         {
-            Toast.makeText(getApplicationContext(),"Email Address Required",Toast.LENGTH_SHORT).show();
+            email.setError("Email Required");
             return;
         }
 
         if (TextUtils.isEmpty(pass))
         {
-            Toast.makeText(getApplicationContext(),"Password Required",Toast.LENGTH_SHORT).show();
+
+            password.setError("Email Required");
             return;
         }
         progressDialog.setMessage("Please Wait....");
@@ -120,6 +122,36 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
         fmails.setVisibility(fmails.VISIBLE);
         f_password.setVisibility(f_password.VISIBLE);
     }
+    public void validate()
+    {
+        alpha = fmail.getText().toString().toLowerCase().trim();
+        if(!alpha.isEmpty())
+        {
+            fp();
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"Please Enter Email Address",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void fp() {
+        firebaseAuth.sendPasswordResetEmail(alpha).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful())
+                {
+                    Toast.makeText(getApplicationContext(),"Reset link sent to provided email",Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Email not registered",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId())
@@ -134,7 +166,7 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
                 forget();
                 break;
             case R.id.f_pass:
-                Toast.makeText(getApplicationContext(),"Reset Code Sent",Toast.LENGTH_SHORT).show();
+                validate();
                 break;
             default:
                 Toast.makeText(getApplicationContext(),"Something is Wrong",Toast.LENGTH_LONG).show();
@@ -160,5 +192,15 @@ public class Log_sign extends AppCompatActivity implements View.OnClickListener{
         }
         else
         super.onBackPressed();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 }
