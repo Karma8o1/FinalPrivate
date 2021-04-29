@@ -15,6 +15,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -80,8 +82,20 @@ public class adding extends Fragment implements View.OnClickListener {
             userMap.put("available", "yes");
             databaseReference.child("Universities").child(id).setValue(userMap);
             id = String.valueOf(value);
-            databaseReference.child("ins_no").setValue(id);
-            Toast.makeText(getView().getContext(),"Upload Successful",Toast.LENGTH_SHORT).show();
+            databaseReference.child("ins_no").setValue(id).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()==true)
+                    {
+                        Toast.makeText(getView().getContext(),"Upload Successful",Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getView().getContext(),"Upload Failed, Please Check Internet Connection",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
         }
         else
         {
