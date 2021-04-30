@@ -25,6 +25,7 @@ public class uni extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_uni, container, false);
         recyclerView = view.findViewById(R.id.recview);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         FirebaseRecyclerOptions<datamodel> options = new FirebaseRecyclerOptions.Builder<datamodel>()
                 .setQuery(FirebaseDatabase.getInstance().getReference().child("Universities"),datamodel.class).build();
